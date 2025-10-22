@@ -1,4 +1,3 @@
-// components/ChatBot.tsx
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -402,7 +401,6 @@ export default function ChatBot() {
 
       {isOpen && (
         <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 border border-gray-200">
-          {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-t-2xl">
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-3">
@@ -425,7 +423,6 @@ export default function ChatBot() {
             </div>
           </div>
 
-          {/* Messages */}
           <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
             <div className="space-y-4">
               {messages.map((message) => (
@@ -468,7 +465,6 @@ export default function ChatBot() {
             </div>
           </div>
 
-          {/* Input Area */}
           <div className="p-4 border-t border-gray-200 bg-white rounded-b-2xl">
             <div className="flex gap-2">
               <input
@@ -490,7 +486,6 @@ export default function ChatBot() {
               </button>
             </div>
             
-            {/* Quick Suggestions */}
             <div className="flex flex-wrap gap-2 mt-3">
               {['Layanan?', 'Harga?', 'Cara Daftar?', 'Kontak?'].map((suggestion) => (
                 <button

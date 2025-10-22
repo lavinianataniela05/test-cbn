@@ -1,4 +1,3 @@
-// app/components/Footer.tsx
 'use client';
 import {
   Linkedin,
@@ -24,7 +23,6 @@ export default function Footer() {
 
   return (
     <footer id="contact" className="relative bg-gradient-to-b from-gray-50 via-white to-gray-100 text-gray-800 overflow-hidden">
-      {/* Decorative Wave Effect - Light Mode */}
       <div className="absolute top-0 left-0 w-full h-32 -mt-1 opacity-80">
         <svg viewBox="0 0 1440 120" className="w-full h-full" preserveAspectRatio="none">
           <defs>
@@ -51,23 +49,19 @@ export default function Footer() {
         </svg>
       </div>
 
-      {/* Subtle grid pattern overlay - Light Mode */}
       <div className="absolute inset-0 opacity-10" style={{
         backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.1) 1px, transparent 0)',
         backgroundSize: '40px 40px'
       }}></div>
 
-      {/* Floating orbs light mode */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute top-1/4 -left-10 w-60 h-60 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
         <div className="absolute top-1/2 left-1/3 w-60 h-60 bg-cyan-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
       </div>
 
-      {/* Main Footer Content */}
       <div className="container mx-auto px-6 lg:px-12 pt-32 pb-16 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
-          {/* CBN Fiber */}
           <div className="space-y-1">
             <h4 className="text-base font-bold mb-5 bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent tracking-wide">
               CBN Fiber
@@ -94,7 +88,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* CBN Business */}
           <div className="space-y-1">
             <h4 className="text-base font-bold mb-5 bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent tracking-wide">
               CBN Business
@@ -124,7 +117,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* General */}
           <div className="space-y-1">
             <h4 className="text-base font-bold mb-5 bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent tracking-wide">
               General
@@ -163,7 +155,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Others */}
           <div className="space-y-1">
             <h4 className="text-base font-bold mb-5 bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent tracking-wide">
               Others
@@ -187,7 +178,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Download App */}
           <div className="space-y-1 lg:col-span-2">
             <h4 className="text-base font-bold mb-5 bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent tracking-wide">
               Download diCBN App
@@ -282,13 +272,11 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider with animated gradient */}
         <div className="mt-16 mb-10 relative h-px overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent animate-pulse"></div>
         </div>
 
-        {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center text-sm gap-6">
           <div className="flex flex-wrap justify-center md:justify-start gap-6">
             <a href="#" className="text-gray-500 hover:text-cyan-700 transition-all duration-300 relative group">
@@ -310,9 +298,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Floating Action Buttons */}
       <div className="fixed bottom-8 right-8 z-50 flex flex-col gap-4">
-        {/* Scroll to Top Button */}
         <button 
           onClick={scrollToTop}
           className="group relative"
@@ -325,7 +311,6 @@ export default function Footer() {
           </div>
         </button>
 
-        {/* Chat Button */}
         <button className="group relative">
           <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
           <div className="relative bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-full p-4 shadow-2xl transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-12">

@@ -1,4 +1,3 @@
-// app/components/HeroSection.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -21,11 +20,9 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative bg-gradient-to-br from-[#0a1628] via-[#0d2847] to-[#1a1a3e] text-white min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Navigation */}
       <nav className="absolute top-0 left-0 right-0 z-50 bg-transparent">
         <div className="container mx-auto px-6 lg:px-12 py-4">
           <div className="flex items-center justify-between">
-            {/* Logo */}
             <div className="flex items-center gap-2 sm:gap-3 group">
               <div className="relative">
                 <div className="absolute inset-0 bg-cyan-500 rounded-lg blur-md group-hover:blur-lg transition-all duration-300 opacity-20 group-hover:opacity-30"></div>
@@ -42,7 +39,6 @@ export default function HeroSection() {
               </span>
             </div>
 
-            {/* Navigation Links */}
             <div className="hidden md:flex items-center gap-8">
               {['about', 'services'].map((item) => (
                 <button
@@ -64,10 +60,7 @@ export default function HeroSection() {
         </div>
       </nav>
 
-      {/* Animated gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-purple-500/10"></div>
-      
-      {/* Animated grid background */}
       <div className="absolute inset-0 opacity-20">
         <div 
           className="absolute inset-0" 
@@ -80,14 +73,12 @@ export default function HeroSection() {
         ></div>
       </div>
 
-      {/* Floating orbs - Responsive sizes */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute top-10 left-4 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-cyan-500 rounded-full mix-blend-screen filter blur-2xl sm:blur-3xl opacity-20 animate-blob"></div>
         <div className="absolute top-20 right-4 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-blue-500 rounded-full mix-blend-screen filter blur-2xl sm:blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
         <div className="absolute -bottom-10 left-1/4 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-purple-500 rounded-full mix-blend-screen filter blur-2xl sm:blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
 
-      {/* Main content */}
       <div className="relative z-10 text-center w-full max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 mt-16">
         <div className="mb-8 sm:mb-12 space-y-4 sm:space-y-6 animate-fadeIn animation-delay-200">
           <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight sm:leading-tight">
@@ -119,7 +110,6 @@ export default function HeroSection() {
           </p>
         </div>
 
-        {/* Stats - Responsive grid */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-5xl mx-auto animate-fadeIn animation-delay-600 px-2 sm:px-0">
           {[
             { value: '20+', label: 'Years Experience', color: 'from-cyan-400 to-blue-500' },
@@ -144,7 +134,6 @@ export default function HeroSection() {
           ))}
         </div>
 
-        {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mt-8 sm:mt-12 animate-fadeIn animation-delay-800 px-2 sm:px-0">
           <button 
             onClick={() => scrollToSection('services')}
@@ -160,7 +149,6 @@ export default function HeroSection() {
           </button>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <button 
             onClick={() => scrollToSection('about')}

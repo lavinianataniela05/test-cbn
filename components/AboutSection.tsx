@@ -1,4 +1,3 @@
-// app/components/AboutSection.tsx
 'use client';
 
 import { useState } from 'react';
@@ -15,7 +14,6 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="relative py-16 sm:py-20 bg-gradient-to-b from-white via-gray-50 to-gray-100 text-gray-800 overflow-hidden">
-      {/* Background Elements */}
       <div className="absolute inset-0 opacity-30">
         <div 
           className="absolute inset-0" 
@@ -26,7 +24,6 @@ export default function AboutSection() {
         ></div>
       </div>
 
-      {/* Animated Wave Background */}
       <div className="absolute bottom-0 left-0 w-full h-32 opacity-15">
         <svg viewBox="0 0 1440 120" className="w-full h-full" preserveAspectRatio="none">
           <path
@@ -43,7 +40,6 @@ export default function AboutSection() {
         </svg>
       </div>
 
-      {/* Floating orbs light mode */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute top-1/4 -left-10 w-60 h-60 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
@@ -52,7 +48,6 @@ export default function AboutSection() {
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Content */}
           <div className="animate-fadeIn">
             <div className="mb-8">
               <span className="text-cyan-600 font-semibold text-lg tracking-wide bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
@@ -62,7 +57,6 @@ export default function AboutSection() {
                 Leading <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-cyan-700 bg-clip-text text-transparent">Digital Infrastructure</span> Provider in Indonesia
               </h2>
               
-              {/* Divider dengan style light mode */}
               <div className="flex items-center justify-start gap-2 py-4">
                 <div className="h-px w-8 bg-gradient-to-r from-cyan-500 to-transparent"></div>
                 <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></div>
@@ -75,7 +69,6 @@ export default function AboutSection() {
               </p>
             </div>
 
-            {/* Features dengan hover effect light mode */}
             <div className="space-y-6">
               {[
                 {
@@ -113,7 +106,6 @@ export default function AboutSection() {
                   key={index}
                   className="flex items-start gap-4 group hover:scale-105 transition-all duration-300 relative bg-white/50 rounded-xl p-4 border border-gray-200/50 hover:border-cyan-200 hover:shadow-lg"
                 >
-                  {/* Hover effect background */}
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   <div className={`relative bg-gradient-to-r ${feature.gradient} p-3 rounded-lg group-hover:scale-110 transition-transform duration-300 z-10 shadow-md`}>
@@ -133,7 +125,6 @@ export default function AboutSection() {
               ))}
             </div>
 
-            {/* CTA Buttons dengan style light mode */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <button 
                 onClick={() => scrollToSection('services')}
@@ -149,10 +140,8 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Right Content - Achievements */}
           <div className="animate-fadeIn animation-delay-400">
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/60 p-6 sm:p-8 relative overflow-hidden shadow-xl">
-              {/* Background pattern */}
               <div className="absolute inset-0 opacity-10" style={{
                 backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.1) 1px, transparent 0)',
                 backgroundSize: '40px 40px'
@@ -189,7 +178,6 @@ export default function AboutSection() {
                   ))}
                 </div>
                 
-                {/* CTA Card dengan gradient light mode */}
                 <div className="group relative overflow-hidden bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/40 rounded-xl p-6 text-center hover:scale-105 transition-all duration-300 backdrop-blur-sm">
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   

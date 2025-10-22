@@ -1,4 +1,3 @@
-// app/components/ServicesSection.tsx
 'use client';
 
 import { useState } from 'react';
@@ -68,7 +67,6 @@ export default function ServicesSection() {
 
   return (
     <section id="services" className="relative py-16 sm:py-20 bg-gradient-to-b from-gray-100 via-white to-gray-50 text-gray-800 overflow-hidden">
-      {/* Background Elements - SAMA PERSIS dengan About */}
       <div className="absolute inset-0 opacity-30">
         <div 
           className="absolute inset-0" 
@@ -79,7 +77,6 @@ export default function ServicesSection() {
         ></div>
       </div>
 
-      {/* Animated Wave Background - SAMA dengan About */}
       <div className="absolute bottom-0 left-0 w-full h-32 opacity-15">
         <svg viewBox="0 0 1440 120" className="w-full h-full" preserveAspectRatio="none">
           <path
@@ -96,7 +93,6 @@ export default function ServicesSection() {
         </svg>
       </div>
 
-      {/* Floating orbs - SAMA PERSIS dengan About */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute top-1/4 -left-10 w-60 h-60 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
@@ -104,7 +100,6 @@ export default function ServicesSection() {
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        {/* Header Section - Style SAMA dengan About */}
         <div className="text-center mb-12 sm:mb-16 animate-fadeIn">
           <span className="text-cyan-600 font-semibold text-lg tracking-wide bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
             OUR SERVICES
@@ -113,7 +108,6 @@ export default function ServicesSection() {
             Comprehensive <span className="bg-gradient-to-r from-cyan-600 via-blue-600 to-cyan-700 bg-clip-text text-transparent">Digital Solutions</span>
           </h2>
           
-          {/* Divider - SAMA PERSIS dengan About */}
           <div className="flex items-center justify-center gap-2 py-4">
             <div className="h-px w-8 bg-gradient-to-r from-cyan-500 to-transparent"></div>
             <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></div>
@@ -125,7 +119,6 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        {/* Services Grid - Style konsisten dengan About */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <div
@@ -134,37 +127,30 @@ export default function ServicesSection() {
               onMouseEnter={() => setHoveredCard(service.id)}
               onMouseLeave={() => setHoveredCard(null)}
             >
-              {/* Background pattern - SAMA dengan About */}
               <div className="absolute inset-0 opacity-10" style={{
                 backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.1) 1px, transparent 0)',
                 backgroundSize: '40px 40px'
               }}></div>
 
-              {/* Hover gradient overlay - SAMA dengan About */}
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 to-blue-500/0 group-hover:from-cyan-500/5 group-hover:to-blue-500/5 rounded-2xl transition-all duration-500"></div>
               
-              {/* Card number */}
               <div className="absolute top-6 right-6 text-2xl sm:text-3xl font-bold text-gray-300 group-hover:text-cyan-400/70 transition-colors duration-300">
                 {String(index + 1).padStart(2, '0')}
               </div>
               
-              {/* Icon */}
               <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300 inline-block">
                 {service.icon}
               </div>
               
-              {/* Title - Style SAMA dengan About */}
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-cyan-700 transition-colors duration-300 relative">
                 {service.title}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 group-hover:w-full transition-all duration-500"></span>
               </h3>
               
-              {/* Description - Style SAMA dengan About */}
               <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base relative z-10">
                 {service.description}
               </p>
 
-              {/* Features - Style SAMA dengan About */}
               <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8 relative z-10">
                 {service.features.map((feature, featureIndex) => (
                   <div 
@@ -182,7 +168,6 @@ export default function ServicesSection() {
                 ))}
               </div>
 
-              {/* CTA Button - Style SAMA dengan About */}
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="group/btn relative w-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 hover:from-cyan-500/20 hover:to-blue-500/20 text-cyan-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 border border-cyan-400/30 hover:border-cyan-500 overflow-hidden"
@@ -197,10 +182,8 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {/* Bottom CTA Section - Style SAMA dengan About */}
         <div className="mt-12 sm:mt-16 animate-fadeIn animation-delay-400">
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/60 p-6 sm:p-8 relative overflow-hidden text-center">
-            {/* Background pattern - SAMA dengan About */}
             <div className="absolute inset-0 opacity-10" style={{
               backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(0,0,0,0.1) 1px, transparent 0)',
               backgroundSize: '40px 40px'
@@ -214,7 +197,6 @@ export default function ServicesSection() {
                 Let us help you choose the right solutions for your business needs. Our experts are ready to assist you.
               </p>
               
-              {/* CTA Buttons - Style SAMA dengan About */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button 
                   onClick={() => scrollToSection('contact')}
