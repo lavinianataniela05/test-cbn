@@ -1,3 +1,4 @@
+// components/ChatBot.tsx
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -20,40 +21,40 @@ interface Service {
   priceRange?: string;
 }
 
-export default function InteractiveChatBot() {
+export default function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Data layanan CBN
+  // Data layanan CBN - konsisten dengan ServicesSection
   const services: Service[] = [
     {
       id: 'internet',
       name: 'Internet & Connectivity',
-      description: 'Koneksi internet dedicated dan broadband untuk bisnis',
-      features: ['Dedicated Internet Access', 'Broadband Business', 'Wireless Connectivity', 'SD-WAN'],
+      description: 'High-speed broadband internet solutions for businesses with guaranteed SLA and 24/7 support',
+      features: ['Dedicated Internet Access', 'Broadband Business', 'Wireless Connectivity', 'SD-WAN Solutions'],
       priceRange: 'Rp 1.5 - 15 juta/bulan'
     },
     {
       id: 'datacenter',
       name: 'Data Center Services',
-      description: 'Colocation dan managed hosting dengan tier 3+',
+      description: 'Tier 3+ data center facilities with maximum security, reliability, and scalability',
       features: ['Colocation Services', 'Cloud Hosting', 'Disaster Recovery', 'Managed Services'],
       priceRange: 'Rp 5 - 50 juta/bulan'
     },
     {
       id: 'cloud',
       name: 'Cloud Solutions',
-      description: 'Solusi cloud comprehensive untuk transformasi digital',
+      description: 'Comprehensive cloud services including IaaS, PaaS, and SaaS for digital transformation',
       features: ['Private Cloud', 'Public Cloud', 'Hybrid Cloud', 'Cloud Migration'],
       priceRange: 'Rp 2 - 20 juta/bulan'
     },
     {
       id: 'security',
       name: 'Network Security',
-      description: 'Proteksi keamanan siber untuk bisnis Anda',
+      description: 'Advanced cybersecurity solutions to protect your digital assets and business data',
       features: ['Firewall Services', 'DDoS Protection', 'Security Monitoring', 'Compliance'],
       priceRange: 'Rp 3 - 25 juta/bulan'
     }
@@ -97,7 +98,9 @@ export default function InteractiveChatBot() {
   const processBotResponse = async (userMessage: string) => {
     setIsLoading(true);
 
+    // Simulate API call delay
     await new Promise(resolve => setTimeout(resolve, 1000));
+    
     let botResponse: Message;
     const lowerMessage = userMessage.toLowerCase();
 
@@ -108,7 +111,7 @@ export default function InteractiveChatBot() {
         isUser: false,
         timestamp: new Date(),
         type: 'services',
-        quickReplies: ['Internet & Connectivity', 'Data Center', 'Cloud Solutions', 'Network Security', 'Kembali ke Menu Utama']
+        quickReplies: ['Internet & Connectivity', 'Data Center Services', 'Cloud Solutions', 'Network Security', 'Kembali ke Menu Utama']
       };
     }
     else if (lowerMessage.includes('harga') || lowerMessage.includes('biaya') || lowerMessage.includes('tarif') || lowerMessage.includes('berapa')) {
@@ -134,7 +137,7 @@ export default function InteractiveChatBot() {
     else if (lowerMessage.includes('kontak') || lowerMessage.includes('hubungi') || lowerMessage.includes('telepon') || lowerMessage.includes('alamat')) {
       botResponse = {
         id: (Date.now() + 1).toString(),
-        text: '**Kontak CBN:**\n\n📍 **Alamat:**\nCBN Building, Jl. Letjen S. Parman Kav. 89\nJakarta Barat 11420\n\n📞 **Telepon:**\n+62 21 1234 5678\n\n📧 **Email:**\ninfo@cbn.id\n\n🌐 **Website:**\nwww.cbn.id\n\n🕒 **Jam Operasional:**\nSenin - Jumat: 08:00 - 17:00 WIB',
+        text: '**Kontak CBN:**\n\n📍 **Alamat:**\nCBN Building, Jl. Letjen S. Parman Kav. 89\nJakarta Barat 11420\n\n📞 **Telepon:**\n1500 123 (Toll Free)\n\n📧 **Email:**\ninfo@cbn.id\n\n🌐 **Website:**\nwww.cbn.id\n\n🕒 **Jam Operasional:**\nSenin - Jumat: 08:00 - 17:00 WIB',
         isUser: false,
         timestamp: new Date(),
         type: 'contact',
@@ -145,7 +148,7 @@ export default function InteractiveChatBot() {
       const internetService = services.find(s => s.id === 'internet');
       botResponse = {
         id: (Date.now() + 1).toString(),
-        text: `**${internetService?.name}**\n\n${internetService?.description}\n\n**Fitur Utama:**\n${internetService?.features.map(f => `• ${f}`).join('\n')}\n\n**Kisaran Harga:** ${internetService?.priceRange}\n\nMau informasi lebih detail atau konsultasi?`,
+        text: `**${internetService?.name}**\n\n${internetService?.description}\n\n**Fitur Utama:**\n${internetService?.features.map(f => `• ${f}`).join('\n')}\n\n**Kisaran Harga:** ${internetService?.priceRange}\n\n**SLA Guarantee:** 99.9% Uptime\n\nMau informasi lebih detail atau konsultasi?`,
         isUser: false,
         timestamp: new Date(),
         type: 'options',
@@ -156,7 +159,7 @@ export default function InteractiveChatBot() {
       const dcService = services.find(s => s.id === 'datacenter');
       botResponse = {
         id: (Date.now() + 1).toString(),
-        text: `**${dcService?.name}**\n\n${dcService?.description}\n\n**Fitur Utama:**\n${dcService?.features.map(f => `• ${f}`).join('\n')}\n\n**Kisaran Harga:** ${dcService?.priceRange}\n\n**Uptime Guarantee:** 99.982%`,
+        text: `**${dcService?.name}**\n\n${dcService?.description}\n\n**Fitur Utama:**\n${dcService?.features.map(f => `• ${f}`).join('\n')}\n\n**Kisaran Harga:** ${dcService?.priceRange}\n\n**Uptime Guarantee:** 99.982% (Tier 3+)`,
         isUser: false,
         timestamp: new Date(),
         type: 'options',
@@ -229,7 +232,7 @@ export default function InteractiveChatBot() {
   const handleContactAction = (action: string) => {
     switch (action) {
       case 'Telepon Sekarang':
-        window.open('tel:+622112345678');
+        window.open('tel:1500123');
         break;
       case 'Kirim Email':
         window.open('mailto:info@cbn.id');
@@ -253,7 +256,7 @@ export default function InteractiveChatBot() {
                 <button
                   key={index}
                   onClick={() => handleOptionSelect(option)}
-                  className="bg-blue-600 hover:bg-blue-700 text-white text-xs py-2 px-3 rounded-lg transition-colors duration-200 text-center"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs py-2 px-3 rounded-lg transition-all duration-200 text-center font-medium"
                 >
                   {option}
                 </button>
@@ -268,12 +271,12 @@ export default function InteractiveChatBot() {
             <p className="text-sm whitespace-pre-wrap leading-relaxed">{message.text}</p>
             <div className="grid grid-cols-1 gap-2">
               {services.map(service => (
-                <div key={service.id} className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                <div key={service.id} className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-3">
                   <h4 className="font-semibold text-blue-800 text-sm">{service.name}</h4>
                   <p className="text-xs text-blue-600 mt-1">{service.description}</p>
                   <button
                     onClick={() => handleQuickReply(service.name)}
-                    className="mt-2 bg-blue-600 hover:bg-blue-700 text-white text-xs py-1 px-2 rounded transition-colors duration-200"
+                    className="mt-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs py-1 px-2 rounded transition-all duration-200"
                   >
                     Detail
                   </button>
@@ -286,7 +289,7 @@ export default function InteractiveChatBot() {
                   <button
                     key={index}
                     onClick={() => handleQuickReply(reply)}
-                    className="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs py-1 px-3 rounded-full transition-colors duration-200"
+                    className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs py-1 px-3 rounded-full transition-all duration-200"
                   >
                     {reply}
                   </button>
@@ -302,7 +305,7 @@ export default function InteractiveChatBot() {
             <p className="text-sm whitespace-pre-wrap leading-relaxed">{message.text}</p>
             <div className="space-y-3">
               {services.map(service => (
-                <div key={service.id} className="bg-green-50 border border-green-200 rounded-lg p-3">
+                <div key={service.id} className="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg p-3">
                   <div className="flex justify-between items-start">
                     <div>
                       <h4 className="font-semibold text-green-800 text-sm">{service.name}</h4>
@@ -310,7 +313,7 @@ export default function InteractiveChatBot() {
                     </div>
                     <button
                       onClick={() => handleQuickReply('Konsultasi Gratis')}
-                      className="bg-green-600 hover:bg-green-700 text-white text-xs py-1 px-2 rounded transition-colors duration-200"
+                      className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white text-xs py-1 px-2 rounded transition-all duration-200"
                     >
                       Konsultasi
                     </button>
@@ -324,7 +327,7 @@ export default function InteractiveChatBot() {
                   <button
                     key={index}
                     onClick={() => handleQuickReply(reply)}
-                    className="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs py-1 px-3 rounded-full transition-colors duration-200"
+                    className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs py-1 px-3 rounded-full transition-all duration-200"
                   >
                     {reply}
                   </button>
@@ -341,19 +344,19 @@ export default function InteractiveChatBot() {
             <div className="grid grid-cols-2 gap-2">
               <button
                 onClick={() => handleContactAction('Telepon Sekarang')}
-                className="bg-green-600 hover:bg-green-700 text-white text-xs py-2 px-3 rounded-lg transition-colors duration-200 flex items-center justify-center gap-1"
+                className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white text-xs py-2 px-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-1"
               >
                 <span>📞</span> Telepon
               </button>
               <button
                 onClick={() => handleContactAction('Kirim Email')}
-                className="bg-blue-600 hover:bg-blue-700 text-white text-xs py-2 px-3 rounded-lg transition-colors duration-200 flex items-center justify-center gap-1"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-xs py-2 px-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-1"
               >
                 <span>✉️</span> Email
               </button>
               <button
                 onClick={() => handleContactAction('Request Callback')}
-                className="bg-purple-600 hover:bg-purple-700 text-white text-xs py-2 px-3 rounded-lg transition-colors duration-200 flex items-center justify-center gap-1 col-span-2"
+                className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white text-xs py-2 px-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-1 col-span-2"
               >
                 <span>🔄</span> Request Callback
               </button>
@@ -364,7 +367,7 @@ export default function InteractiveChatBot() {
                   <button
                     key={index}
                     onClick={() => handleQuickReply(reply)}
-                    className="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs py-1 px-3 rounded-full transition-colors duration-200"
+                    className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs py-1 px-3 rounded-full transition-all duration-200"
                   >
                     {reply}
                   </button>
@@ -386,16 +389,20 @@ export default function InteractiveChatBot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 z-50"
+          className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 group animate-bounce"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-          </svg>
+          <div className="relative">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
+          </div>
         </button>
       )}
 
       {isOpen && (
         <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 border border-gray-200">
+          {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-t-2xl">
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-3">
@@ -418,6 +425,7 @@ export default function InteractiveChatBot() {
             </div>
           </div>
 
+          {/* Messages */}
           <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
             <div className="space-y-4">
               {messages.map((message) => (
@@ -428,8 +436,8 @@ export default function InteractiveChatBot() {
                   <div
                     className={`max-w-[85%] rounded-2xl p-4 ${
                       message.isUser
-                        ? 'bg-blue-600 text-white rounded-br-none'
-                        : 'bg-white text-gray-800 border border-gray-200 rounded-bl-none'
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-br-none'
+                        : 'bg-white text-gray-800 border border-gray-200 rounded-bl-none shadow-sm'
                     }`}
                   >
                     {renderMessage(message)}
@@ -444,7 +452,7 @@ export default function InteractiveChatBot() {
               ))}
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-none p-4">
+                  <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-none p-4 shadow-sm">
                     <div className="flex items-center gap-2 text-gray-600">
                       <div className="flex space-x-1">
                         <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
@@ -460,6 +468,7 @@ export default function InteractiveChatBot() {
             </div>
           </div>
 
+          {/* Input Area */}
           <div className="p-4 border-t border-gray-200 bg-white rounded-b-2xl">
             <div className="flex gap-2">
               <input
@@ -473,7 +482,7 @@ export default function InteractiveChatBot() {
               <button
                 onClick={sendMessage}
                 disabled={isLoading || !inputMessage.trim()}
-                className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white p-3 rounded-lg transition-colors duration-200 flex items-center justify-center disabled:cursor-not-allowed"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:bg-gray-400 text-white p-3 rounded-lg transition-all duration-200 flex items-center justify-center disabled:cursor-not-allowed"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -481,12 +490,13 @@ export default function InteractiveChatBot() {
               </button>
             </div>
             
+            {/* Quick Suggestions */}
             <div className="flex flex-wrap gap-2 mt-3">
               {['Layanan?', 'Harga?', 'Cara Daftar?', 'Kontak?'].map((suggestion) => (
                 <button
                   key={suggestion}
                   onClick={() => handleQuickReply(suggestion)}
-                  className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs py-1 px-3 rounded-full transition-colors duration-200"
+                  className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs py-1 px-3 rounded-full transition-all duration-200"
                 >
                   {suggestion}
                 </button>

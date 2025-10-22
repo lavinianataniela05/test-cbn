@@ -1,3 +1,4 @@
+// app/components/HeroSection.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -11,26 +12,57 @@ export default function HeroSection() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="relative bg-gradient-to-br from-[#0a1628] via-[#0d2847] to-[#1a1a3e] text-white min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Logo CBN di kiri atas */}
-      <div className="absolute top-4 left-4 sm:top-6 sm:left-6 md:top-8 md:left-8 z-20">
-        <div className="flex items-center gap-2 sm:gap-3 group">
-          <div className="relative">
-            <div className="absolute inset-0 bg-cyan-500 rounded-lg blur-md group-hover:blur-lg transition-all duration-300 opacity-20 group-hover:opacity-30"></div>
-            <img 
-              src="/assets/logocbn.png"
-              alt="CBN Logo" 
-              className="h-8 w-auto sm:h-10 relative opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
-              width={32}
-              height={32}
-            />
+    <section id="home" className="relative bg-gradient-to-br from-[#0a1628] via-[#0d2847] to-[#1a1a3e] text-white min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Navigation */}
+      <nav className="absolute top-0 left-0 right-0 z-50 bg-transparent">
+        <div className="container mx-auto px-6 lg:px-12 py-4">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center gap-2 sm:gap-3 group">
+              <div className="relative">
+                <div className="absolute inset-0 bg-cyan-500 rounded-lg blur-md group-hover:blur-lg transition-all duration-300 opacity-20 group-hover:opacity-30"></div>
+                <img 
+                  src="/assets/logocbn.png"
+                  alt="CBN Logo" 
+                  className="h-8 w-auto sm:h-10 relative opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                  width={32}
+                  height={32}
+                />
+              </div>
+              <span className="text-white font-semibold text-lg sm:text-xl tracking-wide opacity-90 group-hover:opacity-100 transition-opacity">
+                CBN
+              </span>
+            </div>
+
+            {/* Navigation Links */}
+            <div className="hidden md:flex items-center gap-8">
+              {['about', 'services'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item)}
+                  className="text-gray-300 hover:text-white font-medium transition-all duration-300 hover:scale-105 capitalize"
+                >
+                  {item}
+                </button>
+              ))}
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105"
+              >
+                Contact Us
+              </button>
+            </div>
           </div>
-          <span className="text-white font-semibold text-lg sm:text-xl tracking-wide opacity-90 group-hover:opacity-100 transition-opacity">
-            CBN
-          </span>
         </div>
-      </div>
+      </nav>
 
       {/* Animated gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-purple-500/10"></div>
@@ -56,7 +88,7 @@ export default function HeroSection() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 text-center w-full max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <div className="relative z-10 text-center w-full max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 mt-16">
         <div className="mb-8 sm:mb-12 space-y-4 sm:space-y-6 animate-fadeIn animation-delay-200">
           <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight sm:leading-tight">
             <span className="inline-block bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-500 bg-clip-text text-transparent animate-gradient">
@@ -114,16 +146,32 @@ export default function HeroSection() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mt-8 sm:mt-12 animate-fadeIn animation-delay-800 px-2 sm:px-0">
-          <button className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 text-sm sm:text-base">
+          <button 
+            onClick={() => scrollToSection('services')}
+            className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 text-sm sm:text-base"
+          >
             Get Started
           </button>
-          <button className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 border border-cyan-400/50 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400/10 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
+          <button 
+            onClick={() => scrollToSection('about')}
+            className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 border border-cyan-400/50 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400/10 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
+          >
             Learn More
           </button>
         </div>
-      </div>
 
-    
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <button 
+            onClick={() => scrollToSection('about')}
+            className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </button>
+        </div>
+      </div>
 
       <style jsx>{`
         @keyframes blob {

@@ -1,17 +1,18 @@
+// app/page.tsx
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServiceSection';
 import AboutSection from '@/components/AboutSection';
 import Footer from '@/components/FooterSection';
-import ChatBot from '@/components/ChatBot';
+import CreativeChatBot from '@/components/ChatBot';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white">
       <HeroSection />
-      <ServicesSection />
       <AboutSection />
+      <ServicesSection />
       <Footer />
-      <ChatBot />
+      <CreativeChatBot />
     </main>
   );
 }
