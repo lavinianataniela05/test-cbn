@@ -1,15 +1,17 @@
 import HeroSection from '@/components/HeroSection';
-import ServiceSection from '@/components/ServiceSection';
+import ServicesSection from '@/components/ServiceSection';
 import AboutSection from '@/components/AboutSection';
-import FooterSection from '@/components/FooterSection';
+import Footer from '@/components/FooterSection';
+import ChatBot from '@/components/ChatBot';
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <main>
+    <main className="min-h-screen">
       <HeroSection />
-      <ServiceSection />
+      <ServicesSection />
       <AboutSection />
-      <FooterSection />
+      <Footer />
+      <ChatBot />
     </main>
   );
 }

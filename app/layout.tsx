@@ -5,7 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'CBN - Your Trusted Partner',
+  title: 'CBNtest',
   description: 'Website resmi CBN menyediakan berbagai layanan terbaik',
 };
 

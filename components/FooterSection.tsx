@@ -1,102 +1,312 @@
+import {
+  Linkedin,
+  Instagram,
+  Facebook,
+  Youtube,
+  Music2,
+} from "lucide-react";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white">
-      {/* Main Footer */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">CBN</span>
-              </div>
-              <span className="text-2xl font-bold">CBN</span>
-            </div>
-            <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
-              PT Cyberindo Aditama is one of Indonesia's leading telecommunication and internet service providers, 
-              delivering cutting-edge digital solutions for businesses.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="bg-gray-800 hover:bg-blue-600 p-3 rounded-lg transition-all duration-300">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-              </a>
-              <a href="#" className="bg-gray-800 hover:bg-blue-400 p-3 rounded-lg transition-all duration-300">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.016 10.016 0 01-3.127 1.195 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z"/>
-                </svg>
-              </a>
-              <a href="#" className="bg-gray-800 hover:bg-blue-700 p-3 rounded-lg transition-all duration-300">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-              </a>
-              <a href="#" className="bg-gray-800 hover:bg-pink-600 p-3 rounded-lg transition-all duration-300">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/>
-                </svg>
-              </a>
-            </div>
+    <footer className="relative bg-gradient-to-b from-[#0a3a52] via-[#083044] to-[#051923] text-white overflow-hidden">
+      {/* Decorative Wave Effect */}
+      <div className="absolute top-0 left-0 w-full h-32 -mt-1 opacity-90">
+        <svg viewBox="0 0 1440 120" className="w-full h-full" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#00d4ff" stopOpacity="0.7" />
+              <stop offset="20%" stopColor="#00ffff" stopOpacity="0.6" />
+              <stop offset="40%" stopColor="#0080ff" stopOpacity="0.5" />
+              <stop offset="60%" stopColor="#4169e1" stopOpacity="0.5" />
+              <stop offset="80%" stopColor="#ff6b9d" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#ffa500" stopOpacity="0.7" />
+            </linearGradient>
+            <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#ffa500" stopOpacity="0.4" />
+              <stop offset="50%" stopColor="#00ffff" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#ff6b9d" stopOpacity="0.4" />
+            </linearGradient>
+          </defs>
+          <path
+            fill="url(#waveGradient)"
+            d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          />
+          <path
+            fill="url(#waveGradient2)"
+            d="M0,40L48,45.3C96,51,192,61,288,56C384,51,480,29,576,24C672,19,768,29,864,34.7C960,40,1056,40,1152,34.7C1248,29,1344,19,1392,13.3L1440,8L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+            opacity="0.5"
+          />
+        </svg>
+      </div>
+
+      {/* Subtle grid pattern overlay */}
+      <div className="absolute inset-0 opacity-5" style={{
+        backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)',
+        backgroundSize: '40px 40px'
+      }}></div>
+
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-6 lg:px-12 pt-36 pb-16 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
+          {/* CBN Fiber */}
+          <div className="space-y-1">
+            <h4 className="text-base font-bold mb-5 bg-gradient-to-r from-cyan-300 via-blue-400 to-cyan-500 bg-clip-text text-transparent tracking-wide">
+              CBN Fiber
+            </h4>
+            <ul className="space-y-2.5 text-gray-300">
+              <li>
+                <a href="#" className="text-sm hover:text-cyan-400 transition-all duration-300 hover:translate-x-1 inline-block relative group">
+                  Fiber Home
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm hover:text-cyan-400 transition-all duration-300 hover:translate-x-1 inline-block relative group">
+                  Fiber Safe
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm hover:text-cyan-400 transition-all duration-300 hover:translate-x-1 inline-block relative group">
+                  Fiber Pro
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+            </ul>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
-            <div className="space-y-3 text-gray-300">
-              <a href="#services" className="block hover:text-cyan-400 transition-colors duration-300">Services</a>
-              <a href="#about" className="block hover:text-cyan-400 transition-colors duration-300">About Us</a>
-              <a href="#" className="block hover:text-cyan-400 transition-colors duration-300">Solutions</a>
-              <a href="#" className="block hover:text-cyan-400 transition-colors duration-300">Coverage</a>
-              <a href="#" className="block hover:text-cyan-400 transition-colors duration-300">News</a>
-              <a href="#" className="block hover:text-cyan-400 transition-colors duration-300">Careers</a>
-            </div>
+          {/* CBN Business */}
+          <div className="space-y-1">
+            <h4 className="text-base font-bold mb-5 bg-gradient-to-r from-cyan-300 via-blue-400 to-cyan-500 bg-clip-text text-transparent tracking-wide">
+              CBN Business
+            </h4>
+            <ul className="space-y-2.5 text-gray-300">
+              <li>
+                <a href="#" className="text-sm hover:text-cyan-400 transition-all duration-300 hover:translate-x-1 inline-block relative group">
+                  Digital Connectivity
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm hover:text-cyan-400 transition-all duration-300 hover:translate-x-1 inline-block relative group">
+                  Digital Platform
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm hover:text-cyan-400 transition-all duration-300 hover:translate-x-1 inline-block relative group">
+                  Digital Service
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+            </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
-            <div className="space-y-4 text-gray-300">
-              <div className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span>CBN Building, Jl. Letjen S. Parman Kav. 89, Jakarta Barat 11420, Indonesia</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <svg className="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span>+62 21 1234 5678</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <svg className="w-5 h-5 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span>info@cbn.id</span>
-              </div>
+          {/* General */}
+          <div className="space-y-1">
+            <h4 className="text-base font-bold mb-5 bg-gradient-to-r from-cyan-300 via-blue-400 to-cyan-500 bg-clip-text text-transparent tracking-wide">
+              General
+            </h4>
+            <ul className="space-y-2.5 text-gray-300">
+              <li>
+                <a href="#" className="text-sm hover:text-cyan-400 transition-all duration-300 hover:translate-x-1 inline-block relative group">
+                  Support/FAQ
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm hover:text-cyan-400 transition-all duration-300 hover:translate-x-1 inline-block relative group">
+                  CBN Location
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm hover:text-cyan-400 transition-all duration-300 hover:translate-x-1 inline-block relative group">
+                  News
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm hover:text-cyan-400 transition-all duration-300 hover:translate-x-1 inline-block relative group">
+                  Careers
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm hover:text-cyan-400 transition-all duration-300 hover:translate-x-1 inline-block relative group">
+                  Speed Test
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Others */}
+          <div className="space-y-1">
+            <h4 className="text-base font-bold mb-5 bg-gradient-to-r from-cyan-300 via-blue-400 to-cyan-500 bg-clip-text text-transparent tracking-wide">
+              Others
+            </h4>
+            <ul className="space-y-2.5 text-gray-300">
+              <li>
+                <a href="#" className="text-sm hover:text-cyan-400 transition-all duration-300 hover:translate-x-1 inline-block relative group">
+                  About Us
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-sm hover:text-cyan-400 transition-all duration-300 hover:translate-x-1 inline-block relative group">
+                  Partnership
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Download App */}
+          <div className="space-y-1 lg:col-span-2">
+            <h4 className="text-base font-bold mb-5 bg-gradient-to-r from-cyan-300 via-blue-400 to-cyan-500 bg-clip-text text-transparent tracking-wide">
+              Download diCBN App
+            </h4>
+            <div className="flex flex-wrap gap-3 mb-8">
+              <a
+                href="#"
+                className="group relative overflow-hidden rounded-lg"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative bg-black/80 backdrop-blur-sm px-4 py-2.5 rounded-lg border border-white/10 hover:border-cyan-400/50 transition-all duration-300 transform group-hover:scale-105">
+                  <div className="flex items-center gap-2">
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                    </svg>
+                    <div className="text-left">
+                      <div className="text-xs text-gray-400">GET IT ON</div>
+                      <div className="text-sm font-semibold">Google Play</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="#"
+                className="group relative overflow-hidden rounded-lg"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative bg-black/80 backdrop-blur-sm px-4 py-2.5 rounded-lg border border-white/10 hover:border-cyan-400/50 transition-all duration-300 transform group-hover:scale-105">
+                  <div className="flex items-center gap-2">
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/>
+                    </svg>
+                    <div className="text-left">
+                      <div className="text-xs text-gray-400">Download on the</div>
+                      <div className="text-sm font-semibold">App Store</div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <h4 className="text-base font-bold mb-5 bg-gradient-to-r from-cyan-300 via-blue-400 to-cyan-500 bg-clip-text text-transparent tracking-wide pt-2">
+              Social Media
+            </h4>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://www.linkedin.com/company/pt-cyberindo-aditama-cbn-internet-/?originalSubdomain=id"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl opacity-0 group-hover:opacity-100 blur transition-all duration-300"></div>
+                <div className="relative bg-white/10 backdrop-blur-md p-3 rounded-xl hover:bg-gradient-to-r hover:from-cyan-400/30 hover:to-blue-500/30 border border-white/10 hover:border-cyan-400/50 transition-all duration-300 transform group-hover:scale-110 group-hover:-translate-y-1">
+                  <Linkedin className="w-5 h-5 text-white" />
+                </div>
+              </a>
+              <a
+                href="https://www.instagram.com/di_cbn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-500 rounded-xl opacity-0 group-hover:opacity-100 blur transition-all duration-300"></div>
+                <div className="relative bg-white/10 backdrop-blur-md p-3 rounded-xl hover:bg-gradient-to-r hover:from-pink-400/30 hover:to-purple-500/30 border border-white/10 hover:border-pink-400/50 transition-all duration-300 transform group-hover:scale-110 group-hover:-translate-y-1">
+                  <Instagram className="w-5 h-5 text-white" />
+                </div>
+              </a>
+              <a
+                href="https://www.facebook.com/di.CBN/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 rounded-xl opacity-0 group-hover:opacity-100 blur transition-all duration-300"></div>
+                <div className="relative bg-white/10 backdrop-blur-md p-3 rounded-xl hover:bg-gradient-to-r hover:from-blue-400/30 hover:to-blue-600/30 border border-white/10 hover:border-blue-400/50 transition-all duration-300 transform group-hover:scale-110 group-hover:-translate-y-1">
+                  <Facebook className="w-5 h-5 text-white" />
+                </div>
+              </a>
+              <a
+                href="https://www.youtube.com/c/diCBN"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 rounded-xl opacity-0 group-hover:opacity-100 blur transition-all duration-300"></div>
+                <div className="relative bg-white/10 backdrop-blur-md p-3 rounded-xl hover:bg-gradient-to-r hover:from-red-500/30 hover:to-red-600/30 border border-white/10 hover:border-red-500/50 transition-all duration-300 transform group-hover:scale-110 group-hover:-translate-y-1">
+                  <Youtube className="w-5 h-5 text-white" />
+                </div>
+              </a>
+              <a
+                href="https://www.tiktok.com/@di_cbn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-pink-500 rounded-xl opacity-0 group-hover:opacity-100 blur transition-all duration-300"></div>
+                <div className="relative bg-white/10 backdrop-blur-md p-3 rounded-xl hover:bg-gradient-to-r hover:from-cyan-400/30 hover:to-pink-500/30 border border-white/10 hover:border-cyan-400/50 transition-all duration-300 transform group-hover:scale-110 group-hover:-translate-y-1">
+                  <Music2 className="w-5 h-5 text-white" />
+                </div>
+              </a>
             </div>
           </div>
+        </div>
+
+        {/* Divider with animated gradient */}
+        <div className="mt-20 mb-10 relative h-px overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/30 to-transparent animate-pulse"></div>
+        </div>
+
+        {/* Bottom Footer */}
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm gap-6">
+          <div className="flex flex-wrap justify-center md:justify-start gap-6">
+            <a href="#" className="text-gray-400 hover:text-cyan-400 transition-all duration-300 relative group">
+              Privacy Policy
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="#" className="text-gray-400 hover:text-cyan-400 transition-all duration-300 relative group">
+              Legal Disclaimer
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="#" className="text-gray-400 hover:text-cyan-400 transition-all duration-300 relative group">
+              Terms of Service
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
+            </a>
+          </div>
+          <p className="text-center md:text-right text-gray-400">
+            Copyright © {currentYear} Cyberindo Aditama. All Rights Reserved.
+          </p>
         </div>
       </div>
 
-      {/* Bottom Footer */}
-      <div className="border-t border-gray-800">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              &copy; {currentYear} PT Cyberindo Aditama (CBN). All rights reserved.
-            </div>
-            <div className="flex space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-white transition-colors duration-300">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors duration-300">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors duration-300">Sitemap</a>
-            </div>
+      {/* Floating Chat Button */}
+      <div className="fixed bottom-8 right-8 z-50">
+        <button className="group relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+          <div className="relative bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white rounded-full p-4 shadow-2xl transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-12">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+            </svg>
           </div>
-        </div>
+        </button>
       </div>
     </footer>
   );

@@ -3,7 +3,6 @@ export default function AboutSection() {
     <section id="about" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
           <div>
             <div className="mb-8">
               <span className="text-blue-600 font-semibold text-lg">About CBN</span>
@@ -69,8 +68,6 @@ export default function AboutSection() {
               </button>
             </div>
           </div>
-
-          {/* Stats Card */}
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Our Achievements</h3>
             <div className="grid grid-cols-2 gap-6">
