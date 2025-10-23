@@ -180,7 +180,7 @@ export default function Footer() {
 
           <div className="space-y-1 lg:col-span-2">
             <h4 className="text-base font-bold mb-5 bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent tracking-wide">
-              Download diCBN App
+              Download at CBN App
             </h4>
             <div className="flex flex-wrap gap-3 mb-8">
               <a
