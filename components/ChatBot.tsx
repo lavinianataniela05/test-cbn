@@ -255,7 +255,7 @@ export default function ChatBot() {
                 <button
                   key={index}
                   onClick={() => handleOptionSelect(option)}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs py-2 px-3 rounded-lg transition-all duration-200 text-center font-medium"
+                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white text-xs py-2 px-3 rounded-lg transition-all duration-200 text-center font-medium shadow-md shadow-cyan-500/25"
                 >
                   {option}
                 </button>
@@ -270,12 +270,12 @@ export default function ChatBot() {
             <p className="text-sm whitespace-pre-wrap leading-relaxed">{message.text}</p>
             <div className="grid grid-cols-1 gap-2">
               {services.map(service => (
-                <div key={service.id} className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-3">
-                  <h4 className="font-semibold text-blue-800 text-sm">{service.name}</h4>
-                  <p className="text-xs text-blue-600 mt-1">{service.description}</p>
+                <div key={service.id} className="bg-gradient-to-r from-cyan-50 to-blue-50 border border-cyan-200 rounded-lg p-3">
+                  <h4 className="font-semibold text-cyan-800 text-sm">{service.name}</h4>
+                  <p className="text-xs text-cyan-600 mt-1">{service.description}</p>
                   <button
                     onClick={() => handleQuickReply(service.name)}
-                    className="mt-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs py-1 px-2 rounded transition-all duration-200"
+                    className="mt-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white text-xs py-1 px-2 rounded transition-all duration-200 shadow-sm"
                   >
                     Detail
                   </button>
@@ -288,7 +288,7 @@ export default function ChatBot() {
                   <button
                     key={index}
                     onClick={() => handleQuickReply(reply)}
-                    className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs py-1 px-3 rounded-full transition-all duration-200"
+                    className="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 text-xs py-1 px-3 rounded-full transition-all duration-200"
                   >
                     {reply}
                   </button>
@@ -304,15 +304,15 @@ export default function ChatBot() {
             <p className="text-sm whitespace-pre-wrap leading-relaxed">{message.text}</p>
             <div className="space-y-3">
               {services.map(service => (
-                <div key={service.id} className="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg p-3">
+                <div key={service.id} className="bg-gradient-to-r from-cyan-50 to-blue-50 border border-cyan-200 rounded-lg p-3">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h4 className="font-semibold text-green-800 text-sm">{service.name}</h4>
-                      <p className="text-xs text-green-600 mt-1">{service.priceRange}</p>
+                      <h4 className="font-semibold text-cyan-800 text-sm">{service.name}</h4>
+                      <p className="text-xs text-cyan-600 mt-1">{service.priceRange}</p>
                     </div>
                     <button
                       onClick={() => handleQuickReply('Konsultasi Gratis')}
-                      className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white text-xs py-1 px-2 rounded transition-all duration-200"
+                      className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white text-xs py-1 px-2 rounded transition-all duration-200 shadow-sm"
                     >
                       Konsultasi
                     </button>
@@ -326,7 +326,7 @@ export default function ChatBot() {
                   <button
                     key={index}
                     onClick={() => handleQuickReply(reply)}
-                    className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs py-1 px-3 rounded-full transition-all duration-200"
+                    className="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 text-xs py-1 px-3 rounded-full transition-all duration-200"
                   >
                     {reply}
                   </button>
@@ -343,19 +343,19 @@ export default function ChatBot() {
             <div className="grid grid-cols-2 gap-2">
               <button
                 onClick={() => handleContactAction('Telepon Sekarang')}
-                className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white text-xs py-2 px-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-1"
+                className="bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white text-xs py-2 px-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-1 shadow-md shadow-cyan-500/25"
               >
                 <span>📞</span> Telepon
               </button>
               <button
                 onClick={() => handleContactAction('Kirim Email')}
-                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-xs py-2 px-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-1"
+                className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-xs py-2 px-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-1 shadow-md shadow-blue-500/25"
               >
                 <span>✉️</span> Email
               </button>
               <button
                 onClick={() => handleContactAction('Request Callback')}
-                className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white text-xs py-2 px-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-1 col-span-2"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white text-xs py-2 px-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-1 col-span-2 shadow-md shadow-cyan-500/25"
               >
                 <span>🔄</span> Request Callback
               </button>
@@ -366,7 +366,7 @@ export default function ChatBot() {
                   <button
                     key={index}
                     onClick={() => handleQuickReply(reply)}
-                    className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs py-1 px-3 rounded-full transition-all duration-200"
+                    className="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 text-xs py-1 px-3 rounded-full transition-all duration-200"
                   >
                     {reply}
                   </button>
@@ -388,7 +388,7 @@ export default function ChatBot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 group animate-bounce"
+          className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 group animate-bounce shadow-cyan-500/25"
         >
           <div className="relative">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -400,21 +400,22 @@ export default function ChatBot() {
       )}
 
       {isOpen && (
-        <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 border border-gray-200">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-t-2xl">
+        <div className="fixed bottom-6 right-6 w-96 h-[600px] bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl flex flex-col z-50 border border-cyan-200/50 overflow-hidden">
+          {/* Header with gradient */}
+          <div className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white p-4 rounded-t-2xl">
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-blue-600 font-bold text-sm">CBN</span>
+                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg">
+                  <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent font-bold text-sm">CBN</span>
                 </div>
                 <div>
                   <h3 className="font-semibold">CBN Assistant</h3>
-                  <p className="text-blue-100 text-sm">Online • Siap Membantu</p>
+                  <p className="text-cyan-100 text-sm">Online • Siap Membantu</p>
                 </div>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-white hover:text-gray-200 transition-colors"
+                className="text-white hover:text-cyan-200 transition-colors"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -423,7 +424,8 @@ export default function ChatBot() {
             </div>
           </div>
 
-          <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
+          {/* Messages area */}
+          <div className="flex-1 p-4 overflow-y-auto bg-gradient-to-b from-gray-50 to-cyan-50/30">
             <div className="space-y-4">
               {messages.map((message) => (
                 <div
@@ -433,12 +435,12 @@ export default function ChatBot() {
                   <div
                     className={`max-w-[85%] rounded-2xl p-4 ${
                       message.isUser
-                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-br-none'
-                        : 'bg-white text-gray-800 border border-gray-200 rounded-bl-none shadow-sm'
+                        ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-br-none shadow-md shadow-cyan-500/25'
+                        : 'bg-white text-gray-800 border border-cyan-200/50 rounded-bl-none shadow-sm'
                     }`}
                   >
                     {renderMessage(message)}
-                    <p className={`text-xs mt-2 ${message.isUser ? 'text-blue-200' : 'text-gray-500'}`}>
+                    <p className={`text-xs mt-2 ${message.isUser ? 'text-cyan-200' : 'text-gray-500'}`}>
                       {message.timestamp.toLocaleTimeString('id-ID', { 
                         hour: '2-digit', 
                         minute: '2-digit' 
@@ -449,12 +451,12 @@ export default function ChatBot() {
               ))}
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-none p-4 shadow-sm">
+                  <div className="bg-white border border-cyan-200/50 rounded-2xl rounded-bl-none p-4 shadow-sm">
                     <div className="flex items-center gap-2 text-gray-600">
                       <div className="flex space-x-1">
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                        <div className="w-2 h-2 bg-cyan-500 rounded-full animate-bounce"></div>
+                        <div className="w-2 h-2 bg-cyan-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                        <div className="w-2 h-2 bg-cyan-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                       </div>
                       <span className="text-sm">Asisten CBN sedang mengetik...</span>
                     </div>
@@ -465,7 +467,8 @@ export default function ChatBot() {
             </div>
           </div>
 
-          <div className="p-4 border-t border-gray-200 bg-white rounded-b-2xl">
+          {/* Input area */}
+          <div className="p-4 border-t border-cyan-200/50 bg-white/80 backdrop-blur-sm rounded-b-2xl">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -473,12 +476,12 @@ export default function ChatBot() {
                 onChange={(e) => setInputMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Ketik pertanyaan Anda..."
-                className="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                className="flex-1 border border-cyan-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-sm bg-white/50"
               />
               <button
                 onClick={sendMessage}
                 disabled={isLoading || !inputMessage.trim()}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:bg-gray-400 text-white p-3 rounded-lg transition-all duration-200 flex items-center justify-center disabled:cursor-not-allowed"
+                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 disabled:bg-gray-400 text-white p-3 rounded-lg transition-all duration-200 flex items-center justify-center disabled:cursor-not-allowed shadow-md shadow-cyan-500/25"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -486,12 +489,13 @@ export default function ChatBot() {
               </button>
             </div>
             
+            {/* Quick suggestions */}
             <div className="flex flex-wrap gap-2 mt-3">
               {['Layanan?', 'Harga?', 'Cara Daftar?', 'Kontak?'].map((suggestion) => (
                 <button
                   key={suggestion}
                   onClick={() => handleQuickReply(suggestion)}
-                  className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs py-1 px-3 rounded-full transition-all duration-200"
+                  className="bg-cyan-50 hover:bg-cyan-100 text-cyan-700 border border-cyan-200 text-xs py-1 px-3 rounded-full transition-all duration-200"
                 >
                   {suggestion}
                 </button>
